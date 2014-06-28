@@ -2,7 +2,5 @@
 /dist
 .tmp
 .sass-cache
-/app/components
-/app/scripts/**/*.js
 /index.sublime-project
 /index.sublime-workspace

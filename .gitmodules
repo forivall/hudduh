@@ -1,6 +1,6 @@
-[submodule "app/scripts/libs/vgui.js"]
-	path = app/scripts/libs/vgui.js
-	url = ../vgui.js/.git
-[submodule "app/scripts/libs/fabric.js"]
-	path = app/scripts/libs/fabric.js
-	url = ../git-repos/fabric.js/.git
+[submodule "vgui.js"]
+	path = old-proof-of-concept/app/scripts/libs/vgui.js
+	url = https://github.com/kangax/fabric.js.git
+[submodule "fabric.js"]
+	path = old-proof-of-concept/app/scripts/libs/fabric.js
+	url = https://github.com/forivall/vgui.js.git
