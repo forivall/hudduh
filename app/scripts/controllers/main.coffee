@@ -4,11 +4,7 @@
 
 angular.module('angularYeomanApp')
   .controller('MainCtrl', ($scope, hudlayout_res) ->
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ]
+    window.$scope = $scope
     $scope.hudlayout_res = hudlayout_res
 
     xposToNum = (pos='0') ->
@@ -29,15 +25,18 @@ angular.module('angularYeomanApp')
         return 10
       return +pos
 
+    $scope.regions = []
+
     editor = new fabric.Canvas 'editor'
     window.editor = editor
     hl = hudlayout_res['Resource/HudLayout.res']
-    getListener = ->
-      _args = arguments
-      ()-> console.log.apply(console, _args); return
-    for key in Object.keys(hl)#[10..20]
-      obj = hl[key]
-      rect =
+    getListener = (obj, rect_json, rect) -> (args...) ->
+      console.log(obj.fieldName, rect.visible, args); return
+    getVisibleWatcher = (rect) -> (newValue) ->
+      rect.setVisible(newValue)
+      editor.renderAll()
+    for key, obj of hl
+      rect_json =
         left: xposToNum obj.xpos
         top: yposToNum obj.ypos
         width: xposToNum obj.wide
@@ -47,17 +46,23 @@ angular.module('angularYeomanApp')
         hasRotatingPoint: false
         # lockScalingY: true
         # lockScalingX: true
-      rect.left += rect.width / 2
-      rect.top += rect.height / 2
-      # console.log rect, obj.fieldName
-      # console.log obj
-      if rect.width >= 640 or rect.height >= 480
-        continue
-      r = new fabric.Rect rect
-      r.on('selected', getListener obj, rect, r)
+      rect_json.left += rect_json.width / 2
+      rect_json.top += rect_json.height / 2
+
+      if rect_json.width >= 640 or rect_json.height >= 480 then continue
+
+      r = new fabric.Rect rect_json
+      r.on('selected', getListener obj, rect_json, r)
+      l = $scope.regions.push({rect: r, obj: obj})
+      $scope.$watch("regions[#{l-1}].rect.visible", getVisibleWatcher(r))
       # r._obj = obj
       editor.add(r)
     # editor.on('object:selected')
+    $scope.visibleAll = true
+    $scope.$watch "visibleAll", (newValue) ->
+      console.log newValue
+      for region in $scope.regions
+        region.rect.visible = newValue
     return
   )
 
