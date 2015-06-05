@@ -28,7 +28,16 @@ header {
   font-family: "Comic Neue";
   padding: 0 1em;
 }
-header h2 {
+header a {
+  color: #ffed97;
+}
+header a:visited {
+  color: #ffda93;
+}
+header .banner {
   text-align: center;
   font-weight: normal;
+}
+header .banner-subtitle {
+  text-align: center;
 }
