@@ -28,6 +28,9 @@ header {
   font-family: "Comic Neue";
   padding: 0 1em;
 }
+header.sub-header {
+  background-color: #444;
+}
 header a {
   color: #ffed97;
 }
