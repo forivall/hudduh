@@ -1,4 +1,4 @@
-@import "comic-neue.css";
+@import url("//cdn.jsdelivr.net/font-comicneue/1.1/font.css");
 html,
 body {
   height: 100%;
