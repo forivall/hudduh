@@ -6,6 +6,7 @@ html, body
 body
   display: flex
   flex-direction: column
+  font-family: "Comic Neue"
 
 .youtube-video
   flex-grow: 1
@@ -13,7 +14,6 @@ body
 header
   background-color: #666666
   color: #EEEEEE
-  font-family: "Comic Neue"
 
   padding: 0 1em
 
@@ -22,10 +22,30 @@ header
     &:visited
       color: #FFDA93
 
-
   .banner
     text-align: center
     font-weight: normal
+    margin-top: 0.4em
+    margin-bottom: 0.4em
 
   .banner-subtitle
     text-align: center
+
+  &.sub-header
+    background-color: #444
+    p
+      margin-top: 0.2em
+      margin-bottom: 0.2em
+
+.go-ham
+  position: absolute
+  top: 0
+  right: 0
+
+  background-color: transparent
+
+  font-weight: normal
+  font-size: 6pt
+  &, a
+    text-decoration: none
+    color: #2b2229

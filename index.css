@@ -1,4 +1,3 @@
-@import url("//cdn.jsdelivr.net/font-comicneue/1.1/font.css");
 html,
 body {
   height: 100%;
@@ -15,6 +14,7 @@ body {
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
+  font-family: "Comic Neue";
 }
 .youtube-video {
   -webkit-box-flex: 1;
@@ -25,11 +25,7 @@ body {
 header {
   background-color: #666;
   color: #eee;
-  font-family: "Comic Neue";
   padding: 0 1em;
-}
-header.sub-header {
-  background-color: #444;
 }
 header a {
   color: #ffed97;
@@ -40,7 +36,29 @@ header a:visited {
 header .banner {
   text-align: center;
   font-weight: normal;
+  margin-top: 0.4em;
+  margin-bottom: 0.4em;
 }
 header .banner-subtitle {
   text-align: center;
+}
+header.sub-header {
+  background-color: #444;
+}
+header.sub-header p {
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+}
+.go-ham {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: transparent;
+  font-weight: normal;
+  font-size: 6pt;
+}
+.go-ham,
+.go-ham a {
+  text-decoration: none;
+  color: #2b2229;
 }
