@@ -7,10 +7,14 @@ body {
   height: 100px;
   width: 100px;
   position: absolute;
-  animation-name: slidein;
-  animation-duration: 0.5s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
+  -webkit-animation-name: slidein;
+          animation-name: slidein;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
   top: 230px;
   mix-blend-mode: difference;
 }
@@ -37,35 +41,23 @@ body {
   height: 260px;
   width: 400px;
 }
-@-moz-keyframes slidein {
-  from {
-    transform: translate(0px, -100px) rotate(0turn) translate(0px, 75px) rotate(0turn);
-  }
-  to {
-    transform: translate(0px, -100px) rotate(0.25turn) translate(75px, 0px) rotate(0.25turn);
-  }
-}
 @-webkit-keyframes slidein {
   from {
-    transform: translate(0px, -100px) rotate(0turn) translate(0px, 75px) rotate(0turn);
+    -webkit-transform: translate(0px, -100px) rotate(0turn) translate(0px, 75px) rotate(0turn);
+            transform: translate(0px, -100px) rotate(0turn) translate(0px, 75px) rotate(0turn);
   }
   to {
-    transform: translate(0px, -100px) rotate(0.25turn) translate(75px, 0px) rotate(0.25turn);
-  }
-}
-@-o-keyframes slidein {
-  from {
-    transform: translate(0px, -100px) rotate(0turn) translate(0px, 75px) rotate(0turn);
-  }
-  to {
-    transform: translate(0px, -100px) rotate(0.25turn) translate(75px, 0px) rotate(0.25turn);
+    -webkit-transform: translate(0px, -100px) rotate(0.25turn) translate(75px, 0px) rotate(0.25turn);
+            transform: translate(0px, -100px) rotate(0.25turn) translate(75px, 0px) rotate(0.25turn);
   }
 }
 @keyframes slidein {
   from {
-    transform: translate(0px, -100px) rotate(0turn) translate(0px, 75px) rotate(0turn);
+    -webkit-transform: translate(0px, -100px) rotate(0turn) translate(0px, 75px) rotate(0turn);
+            transform: translate(0px, -100px) rotate(0turn) translate(0px, 75px) rotate(0turn);
   }
   to {
-    transform: translate(0px, -100px) rotate(0.25turn) translate(75px, 0px) rotate(0.25turn);
+    -webkit-transform: translate(0px, -100px) rotate(0.25turn) translate(75px, 0px) rotate(0.25turn);
+            transform: translate(0px, -100px) rotate(0.25turn) translate(75px, 0px) rotate(0.25turn);
   }
 }
